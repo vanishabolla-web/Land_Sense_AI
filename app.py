@@ -19,6 +19,14 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+st.set_page_config(
+    page_title="Land Price Prediction",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Force light theme for all users
+st._config.set_option("theme.base", "light")
 
 # ===============================
 # Custom CSS
