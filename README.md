@@ -54,10 +54,7 @@ https://landsense-ai.streamlit.app/
 
 ## ☁️ Model Deployment
 
-* Model is stored externally on **Google Drive**
-* Loaded dynamically using `gdown`
-* Ensures lightweight GitHub repository
-
+* Model is stored externally on git
 ---
 
 ## 📌 Future Improvements
