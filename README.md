@@ -4,7 +4,7 @@
 ## 📌 Overview
 
 This project is a **Machine Learning-based Land Price Prediction System** built using **Python, Scikit-learn, and Streamlit**.
-It allows users to estimate land prices based on various features such as location, size, and other factors.
+It allows users to estimate land prices based on various features such as location, land size, and other factors.
 
 The application is deployed as an **interactive web app** using Streamlit.
 
