@@ -4,6 +4,7 @@
 import numpy as np
 import pandas as pd
 import joblib
+import os
 import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
@@ -132,12 +133,19 @@ hr {
 # Load Data & Pipeline
 # ===============================
 inpdata = pd.read_csv('final_land_price_65k.csv')
-file_id = "1zfX0BnLglQzZbRuOIQrM0jCtJqAM8ozl"
-url = f"https://drive.google.com/uc?id={file_id}"
 
-gdown.download(url, "model.pkl", quiet=False)
+@st.cache_resource
+def load_model():
+    file_id = "1zfX0BnLglQzZbRuOIQrM0jCtJqAM8ozl"
+    output = "model.pkl"
 
-pipeline = joblib.load("model.pkl")
+    if not os.path.exists(output):
+        url = f"https://drive.google.com/uc?export=download&id={file_id}"
+        gdown.download(url, output, quiet=False, fuzzy=True)
+
+    return joblib.load(output)
+
+pipeline = load_model()
 
 # Extract components
 model = pipeline["model"]
