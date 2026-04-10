@@ -134,11 +134,7 @@ inpdata = pd.read_csv('final_land_price_65k.csv')
 
 @st.cache_resource
 def load_model():
-    if not os.path.exists("model.pkl"):
-        file_id = "1zfX0BnLglQzZbRuOIQrM0jCtJqAM8ozl"
-        url = f"https://drive.google.com/uc?id={file_id}"
-        gdown.download(url, "model.pkl", quiet=False, fuzzy=True)
-    return joblib.load("model.pkl")
+    return joblib.load("landprice.pkl")
 
 pipeline = load_model()
 
