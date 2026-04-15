@@ -401,7 +401,7 @@ elif page == "🏡 Prediction":
                 )
                 st.plotly_chart(fig_gauge, use_container_width=True)
 
-            # Price Projection Bar Chart
+
             with chart_col2:
                 st.markdown('<div class="section-badge">📈 Price Projection</div>', unsafe_allow_html=True)
 
